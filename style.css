@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Roboto:wght@300&display=swap');
+
+body {
+    font: 18px "Nunito", sans-serif;
+    color: black;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url(bg.jpg) no-repeat center;
+    background-size: cover;
+    animation: backgroundZoomAnimate 20s forwards /*infinite*/;
+}
+@keyframes backgroundZoomAnimate {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.3);
+    }
+}
+
+.profile-card {
+    box-shadow: 0 18px 200px -60px black;
+    border-radius: 50px;
+    width: 500px;
+    position: relative;
+    backdrop-filter: blur(15px);
+    border: 1px solid #ffffff40;
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+@media screen and (max-width: 768px) {
+    .profile-card {
+        width: auto;
+        border-radius: 50px;
+        gap: 1px;
+    }
+}
+
+.profile-card img {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    box-shadow: 0 10px 60px -10px rgba(13, 28, 39, .5);
+}
+
+.profile-card_desc {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.profile-card_desc h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.profile-card_desc div {
+    font-size: 20px;
+}
+
+.profile-card_info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+@media screen and (max-width: 576px) {
+    .profile-card_info {
+        font-size: 13px;
+    }
+}
+.profile-card_info div{
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.profile-card_info:first-child {
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+.profile-card_info:last-child {
+    font-size: 16px;
+    opacity: .7;
+}
+
+.profile-card_social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profile-card_social a {
+    display: inline-flex;
+    width: 55px;
+    height: 55px;
+    margin: 15px;
+    border-radius: 40%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    flex-shrink: 0;
+    transition: all .2s;
+    
+}
+@media screen and (max-width: 768px) {
+    .profile-card_social a {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+}
+@media screen and (min-width: 7680px) {
+    .profile-card_social a:hover {
+        transform: scale(1.2) translateY(-5px);
+    }
+}
+
+}
+
+.profile-card_social .facebook {
+    background: linear-gradient(45deg, #3b5998, #0078D7);
+    box-shadow: 0 4PX 30PX rgba(43, 98, 169, 0.5);
+}
+.profile-card_social .twitter {
+    background: linear-gradient(45deg, #1da1f2, #0e71c8);
+    box-shadow: 0 4px 30px rgba(19, 127, 212, 0.7)
+}
+.profile-card_social .instagram {
+    background: linear-gradient(45deg, #405de6, 
+    #5851db, 
+    #833ab4, 
+    #c13584, 
+    #e1306c, 
+    #fd1d1d);
+    box-shadow: 0 4px 30px rgba(120, 64, 190, 0.6);
+}
+.profile-card_social .linkedin {
+    background: linear-gradient(45deg, #0077b5, #2a6dff);
+    box-shadow: 0 4px 30px rgba(3, 120, 255, 0.6)
+}
+.profile-card_social .github {
+    background: linear-gradient(45deg, #333333, #626b73);
+    box-shadow: 0 4px 30px rgba(63, 65, 67, 0.6);
+}
+
+.profile-card_actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+@media screen and (max-width: 576px){
+    .profile-card_actions {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+.profile-card_actions button {
+    font-weight: bold;
+    font-size: 22px;
+    padding: 15px 0;
+    min-width: 250px;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: all .2s;        
+}
+@media screen and (max-width: 768px) {
+    .profile-card_actions button {
+        min-width: 170px;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 576px){
+    .profile-card_actions button:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.profile-card_actions .blue {
+    background: linear-gradient(45deg, #1da1f2, #0e71c8);
+    box-shadow: 0 4px 30px rgba(19, 127, 212, 0.4);
+}
+.profile-card_actions .blue:hover {
+    box-shadow: 0 7px 30px rgba(19, 127, 212, 0.75);
+}
+
+.profile-card_actions .orange {
+    background: linear-gradient(45deg, #d5135a, #f05924);
+    box-shadow: 0 4px 30px rgba(19, 127, 212, 0.4);
+}
+.profile-card_actions .orange:hover {
+    box-shadow: 0 7px 30px rgba(223, 45, 70, 0.75);
+}
